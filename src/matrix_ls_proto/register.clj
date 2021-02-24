@@ -1,6 +1,7 @@
 (ns matrix-ls-proto.register
   (:require [clj-http.client :as client]
-            [cheshire.core :refer :all]))
+            [cheshire.core :refer :all]
+            [matrix-ls-proto.server :refer [server]]))
 
 (def reg-ext "/client/r0/register")
 
