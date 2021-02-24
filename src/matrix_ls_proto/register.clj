@@ -23,7 +23,7 @@
 (defn test-register
   "Use the HTTP server"
   []
-  (attempt-register matrix-ls-proto.core/server {:username "justtesting" :password "superdupergood"}))
+  (attempt-register server {:username "justtesting" :password "superdupergood"}))
 
 ;; TODO: use a tuple instead of printing to stdout
 (defn process-register
