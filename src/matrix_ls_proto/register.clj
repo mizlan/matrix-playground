@@ -25,7 +25,9 @@
   []
   (attempt-register matrix-ls-proto.core/server {:username "justtesting" :password "superdupergood"}))
 
+;; TODO: use a tuple instead of printing to stdout
 (defn process-register
+  "Either returns nil or access token. Will print a message to stdout"
   []
   (let [resp (test-register)]
     (if-let [msg (resp "error")]
