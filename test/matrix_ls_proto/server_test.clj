@@ -1,5 +1,7 @@
 (ns matrix-ls-proto.server-test
   (:require [matrix-ls-proto.server :as sut]
-            [clojure.test :as t]))
+            [clojure.test :refer :all]))
 
-(deftest)
+(deftest dumb-test
+  (testing "can we find a server"
+    (is (some? sut/server))))
