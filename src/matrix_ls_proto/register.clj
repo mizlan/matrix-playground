@@ -27,7 +27,8 @@
 
 ;; TODO: use a tuple instead of printing to stdout
 (defn process-register
-  "Either returns nil or access token. Will print a message to stdout"
+  "Either returns nil or access token. Will print a message to stdout.
+  May return an access token, or nil."
   []
   (let [resp (test-register)]
     (if-let [msg (resp "error")]
