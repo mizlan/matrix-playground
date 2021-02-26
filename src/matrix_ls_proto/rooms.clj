@@ -11,9 +11,10 @@
         form-params {"room_alias_name" room-name}
         query-params {"access_token" access-token}]
     (:body (client/post link
-                        :form-params form-params
-                        :query-params query-params
-                        :accept :json))))
+                        {:form-params form-params
+                         :query-params query-params
+                         :accept :json
+                         :content-type :json}))))
 
 (defn test-create-room
   []
