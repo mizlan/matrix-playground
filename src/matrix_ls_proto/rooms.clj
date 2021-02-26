@@ -1,5 +1,7 @@
 (ns matrix-ls-proto.rooms
-  (:require [clj-http.client :as client]))
+  (:require [clj-http.client :as client]
+            [matrix-ls-proto.server :refer [server]]
+            [matrix-ls-proto.register :as reg]))
 
 (def room-ext "/client/r0/createRoom")
 
@@ -15,6 +17,5 @@
 
 (defn test-create-room
   []
-  (let [server matrix-ls-proto.server/server
-        access-token (matrix-ls-proto.register/process-register)]
-    (create-room server "clj-room")))
+  (let [access-token (reg/process-register)]
+    (create-room server "clj-room" access-token)))
