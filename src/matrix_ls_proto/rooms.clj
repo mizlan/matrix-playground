@@ -16,7 +16,10 @@
               :content-type :json
               :accept :json
               :throw-exceptions? false}]
-    (parse-string (:body (client/post link opts)))))
+    (-> link
+        (client/post opts)
+        :body
+        p)))
 
 (defn handle-query-create-room
   [json-response]
