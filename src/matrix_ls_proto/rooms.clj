@@ -1,7 +1,8 @@
 (ns matrix-ls-proto.rooms
   (:require [clj-http.client :as client]
             [matrix-ls-proto.server :refer [server]]
-            [matrix-ls-proto.register :as reg]))
+            [matrix-ls-proto.register :as reg]
+            [cheshire.core :refer :all]))
 
 (def room-ext "/client/r0/createRoom")
 
