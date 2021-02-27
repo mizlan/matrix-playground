@@ -19,7 +19,7 @@
     (-> link
         (client/post opts)
         :body
-        p)))
+        parse-string)))
 
 (defn handle-query-create-room
   [json-response]
