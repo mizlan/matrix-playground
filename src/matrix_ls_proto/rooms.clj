@@ -19,7 +19,7 @@
     (parse-string (:body (client/post link opts)))))
 
 
-  (defn test-create-room
-    []
-    (let [access-token (reg/process-register)]
-      (query-create-room server "clj-room" access-token)))
+(defn test-create-room
+  []
+  (let [access-token (reg/process-register)]
+    (query-create-room server "clj-room" access-token)))
