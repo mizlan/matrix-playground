@@ -36,5 +36,6 @@
         (println msg)
         nil)
       (do
+        (println resp)
         (println (str "Your access token is `" (resp "access_token") "`"))
         (resp "access_token")))))
