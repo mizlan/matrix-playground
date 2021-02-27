@@ -10,13 +10,13 @@
 
 (defn query-supported-types
   ([] (query-supported-types http-server))
-  [server]
-  (let [link (str server login-ext)]
-    (parse-string
-     (:body
-      (client/get link
-                  {:insecure? false
-                   :accept :json})))))
+  ([server]
+   (let [link (str server login-ext)]
+     (parse-string
+      (:body
+       (client/get link
+                   {:insecure? false
+                    :accept :json}))))))
 
 (defn handle-query-supported-types
   [json-response]
