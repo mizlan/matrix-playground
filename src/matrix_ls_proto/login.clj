@@ -17,3 +17,8 @@
       (client/get link
                   {:insecure? false
                    :accept :json})))))
+
+(defn handle-query-supported-types
+  [json-response]
+  (when-let [flows (json-response "flows")]
+    (map #(get % "type") flows)))
