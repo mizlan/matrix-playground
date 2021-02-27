@@ -9,6 +9,7 @@
 ;;       Hopefully, `m.login.password` is one of these. Then we will proceed
 
 (defn query-supported-types
+  "Use the default configured http-server by default"
   ([] (query-supported-types http-server))
   ([server]
    (let [link (str server login-ext)
