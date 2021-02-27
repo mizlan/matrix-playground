@@ -1,6 +1,6 @@
 (ns matrix-ls-proto.rooms
   (:require [clj-http.client :as client]
-            [matrix-ls-proto.server :refer [server]]
+            [matrix-ls-proto.server :refer [http-server]]
             [matrix-ls-proto.register :as reg]
             [cheshire.core :refer :all]))
 

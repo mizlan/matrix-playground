@@ -1,7 +1,7 @@
 (ns matrix-ls-proto.register
   (:require [clj-http.client :as client]
             [cheshire.core :refer :all]
-            [matrix-ls-proto.server :refer [server]]))
+            [matrix-ls-proto.server :refer [http-server]]))
 
 (def reg-ext "/client/r0/register")
 
@@ -23,7 +23,7 @@
 (defn test-register
   "Use the HTTP server"
   []
-  (attempt-register server {:username "justtesting" :password "superdupergood"}))
+  (attempt-register http-server {:username "justtesting" :password "superdupergood"}))
 
 ;; TODO: use a tuple instead of printing to stdout
 (defn process-register

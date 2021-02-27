@@ -15,4 +15,4 @@
 
 (defn syncify
   []
-  (attempt-sync matrix-ls-proto.server/server (matrix-ls-proto.register/process-register)))
+  (attempt-sync matrix-ls-proto.server/http-server (matrix-ls-proto.register/process-register)))
