@@ -13,8 +13,8 @@
         query-params {"access_token" access-token}
         opts {:form-params form-params
               :query-params query-params
-              :accept :json
               :content-type :json
+              :accept :json
               :throw-exceptions? false}]
     (parse-string (:body (client/post link opts)))))
 
