@@ -18,8 +18,15 @@
               :throw-exceptions? false}]
     (parse-string (:body (client/post link opts)))))
 
+(defn handle-query-create-room
+  [json-response]
+  (cond
+    (json-response "message") (json-response "message")
+    (json-response "room_id") json-response
+    :else nil
+    ))
 
 (defn test-create-room
-  []
+  [room-name]
   (let [access-token (reg/process-register)]
-    (query-create-room server "clj-room" access-token)))
+    (query-create-room server room-name access-token)))
