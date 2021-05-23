@@ -1,6 +1,6 @@
 (ns matrix-ls-proto.login
   (:require [clj-http.client :as client]
-            [cheshire.core :refer :all]
+            [cheshire.core :as json]
             [matrix-ls-proto.server :refer [http-server]]))
 
 (def login-ext "/client/r0/login")
@@ -18,7 +18,21 @@
      (-> link
          (client/get opts)
          :body
-         parse-string))))
+         json/parse-string))))
+
+(defn attempt-login
+  [server {:keys [username password]}]
+  (let [link (str server login-ext)
+        body {:identifier
+              {:type "m.id.user"
+               :user username}
+              :initial_device_display_name "giant toilet"
+              :password password
+              :type "m.login.password"}]
+    (-> link
+        (client/post {:body (json/generate-string body)})
+        )))
+   
 
 (defn handle-query-supported-types
   [json-response]
