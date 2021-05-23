@@ -14,6 +14,11 @@
 
 (def ^:dynamic *server* "https://matrix.org/_matrix")
 
+(defn only [m]
+  (let [ks (keys m)]
+    (assert (= 1 (count ks)))
+    (m (first ks))))
+
 (defn get-access-token []
   (-> (login/attempt-login *server* {:username "mizlan_t"
                                      :password secrets/pw})
