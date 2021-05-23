@@ -32,4 +32,4 @@
 (defn test-create-room
   [room-name]
   (let [access-token (reg/process-register)]
-    (query-create-room server room-name access-token)))
+    (query-create-room http-server room-name access-token)))
