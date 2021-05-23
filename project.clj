@@ -5,7 +5,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [clj-http "3.12.0"]
-                 [cheshire "5.10.0"]]
+                 [cheshire "5.10.0"]
+                 [djblue/portal "0.11.2"]]
   :main ^:skip-aot matrix-ls-proto.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
