@@ -10,9 +10,8 @@
   [server room-name access-token]
   (let [link (str server room-ext)
         form-params {"room_alias_name" room-name}
-        query-params {"access_token" access-token}
         opts {:form-params form-params
-              :query-params query-params
+              :headers {"Authorization" (format "Bearer %s" access-token)}
               :content-type :json
               :accept :json
               :throw-exceptions? false}]
